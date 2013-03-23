@@ -1,14 +1,12 @@
 # -------------------------------
 # Requires
 # -------------------------------
-require "middleman-smusher"
 
 # -------------------------------
 # Variables
 # -------------------------------
-@app_url       = "cd ~/Documents/Studies/phonegap_apps/ios_test/"
-@copy_command  = "rm -R www && mv ~/Documents/Studies/phonegap_apps/phonegap_middleman/build www"
-@build_command = "./cordova/build && ./cordova/emulate"
+@app_url      = "cd ~/Documents/Studies/phonegap_apps/android_test/;"
+@copy_command = "rm -R assets/www/* ; cp -r ~/Documents/Studies/phonegap_apps/phonegap_middleman/build/* assets/www/"
 
 # -------------------------------
 # Sets
@@ -22,13 +20,38 @@ set :images_dir, 'images'
 # -------------------------------
 module Phonegap
   class << self
-    def registered(app)
-      app.after_build do |builder|
-        builder.run(@app_url + '&&' + @copy_command)
-        builder.run(@app_url + '&&' + @build_command)
+
+    def build_properties( app_url, middleman_build_folder, os_type )
+
+      bash_command = 'cd ' + app_url + ';'
+      bash_command = bash_command + 'rm -R assets/www/* ;'
+      bash_command = bash_command + 'cp -r ' + middleman_build_folder + ' assets/www/;'
+
+      if os_type == 'ios'
+        bash_command = bash_command + './cordova/build && ./cordova/emulate;'
+      elsif os_type == 'android'
+        bash_command = bash_command + './cordova/build && ./cordova/run;'
       end
+
     end
+
+    def registered(app)
+
+      build_bash_cmd = build_properties(
+        '~/Documents/Studies/phonegap_apps/android_test/',
+        '~/Documents/Studies/phonegap_apps/phonegap_middleman/build/*',
+        'android'
+      )
+
+      # after execute the build execute the bash commands
+      app.after_build do |builder|
+        builder.run(build_bash_cmd)
+      end
+
+    end
+
     alias :included :registered
+
   end
 end
 
