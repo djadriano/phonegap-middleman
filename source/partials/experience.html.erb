@@ -1,6 +1,40 @@
 <div data-role="page" id="experience">
   <%= partial "partials/header", :locals => {:title => "Interna" } %>
   <div data-role="content">
-    Interna de experiencia 
+<!--     <form action="#" method="post" class="experience_filter_form">
+      <fieldset>
+        <select name="" class="experience_filter_category">
+          <option value="">Categoria</option>
+        </select>
+        <select name="" class="experience_filter_location">
+          <option value="">Localização</option>
+          <option value="">Localização</option>
+        </select>
+      </fieldset>
+    </form> -->
+
+    <section class="cards">
+      <ul class="cards_list">
+        <% 5.times do |num| %>
+        <li>
+          <div class="header">
+            <figure>
+              <img src="https://graph.facebook.com/665377662/picture" alt="">
+              <figcaption>
+                Adriano Fernandes
+                <p>São Paulo - SP</p>
+              </figcaption>
+            </figure>
+          </div>
+          <figure class="experience_image">
+            <img src="https://irs2.4sqi.net/img/general/original/665651_y91JYVXlJMsL5_STs6C0RD24zUka673b_jskzNzfg-4.jpg" alt="">
+            <figcaption>
+              Menu degustação IMPECÁVEL. Vieiras Canadenses, Anchovas Negras e o melhor kobe Beef que eu já provei em um restaurante japonês. #naotempreco
+            </figcaption>
+          </figure>
+        </li>
+        <% end %>
+      </ul>
+    </section>
   </div>
 </div>
