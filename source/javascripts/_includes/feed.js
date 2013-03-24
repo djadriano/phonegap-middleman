@@ -2,10 +2,13 @@ var feed = {
   db: null,
 
   init: function(){
-    $('#feed').on('pageshow', feed.fetch);
+    console.log('feed');
+    $('#feed').bind('pageshow', feed.fetch);
   },
   
   fetch: function(){
+    foolog('fetch');
+    
     feed.db = window.openDatabase("db_sample", "1.0", "Sample Database", 1000000);
     feed.db.transaction(function(tx){
       tx.executeSql(sqlCreate);
@@ -14,6 +17,8 @@ var feed = {
   },
   
   fetch_complete: function(tx, results){
+    foolog('fetch');
+
     for(var i = 0; i < results.rows.length; i++){
       foolog(item.name);
       foolog(item.comments);
