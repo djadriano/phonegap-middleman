@@ -18,3 +18,5 @@
 config.rb
 
 Gemfile.lock
+
+/source/javascripts/_includes/cordova-2.5.0.js
