@@ -1,6 +1,25 @@
 <div data-role="page" id="new_experience">
   <%= partial "partials/header", :locals => {:title => "Nova experiência" } %>
   <div data-role="content">
-    Form
+    <form>
+      <input type="hidden" id="lat">
+      <input type="hidden" id="lng">
+      <input type="hidden" id="image">
+      <input type="hidden" id="user" value="Ivo Rafael">
+
+      <div>
+        <strong>Imagem: </strong><br>
+        <button data-theme="b" data-inline="true" data-mini="true" id="data_cam" class="nav_upload_image" data-source="CAMERA">Usar camera</button>
+        <button data-theme="b" data-inline="true" data-mini="true" id="data_lib" class="nav_upload_image" data-source="PHOTOLIBRARY">Minhas fotos</button>
+        <div>
+          <img id="image_preview">
+        </div>
+      </div>
+      <textarea id="user_comments" cols="30" rows="10" placeholder="Comentário"></textarea>
+      <p>
+        <button data-theme="a" data-inline="true" data-mini="false" id="btn_save">Salvar</button> ou 
+        <button data-inline="true" data-mini="false" id="btn_cancel">Cancelar</button>
+      </p>
+    </form>
   </div>
 </div>
