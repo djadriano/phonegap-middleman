@@ -26,6 +26,7 @@ function onDeviceReady() {
   bindUIEvents();
   checkAvailableMenus();
 
+  navigator.splashscreen.show();
   navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
 
   db = window.openDatabase("db_sample", "1.0", "Sample Database", 1000000);
