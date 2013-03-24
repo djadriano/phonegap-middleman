@@ -53,7 +53,7 @@ var new_exp = {
     data.push( $('#lng').val() );
     
     new_exp.db.transaction(function(tx){
-      tx.executeSql(new_exp.sql_drop);
+      //tx.executeSql(new_exp.sql_drop);
       tx.executeSql(new_exp.sql_create);
       tx.executeSql('INSERT INTO Users (name, comments, image_url, lat, lng) VALUES (?, ?, ?, ?, ?)', data);
     }, new_exp.sql_error, new_exp.insert_success);

@@ -1,9 +1,32 @@
 <div data-role="page" id="feed">
-  <%= partial "partials/header", :locals => {:title => "Feed"} %>
+  <%= partial "partials/header", :locals => {:title => "Feed", :has_back_button => false } %>
   <div data-role="content">
-    Pagina de feed <br><br>    
-    <a href="#experience" data-transition="slide">interna</a><br>
-    <a href="#new_experience" data-transition="slide">form</a><br>
+    <section class="cards">
+      <ul class="cards_list">
+        <!-- 
+        <li>
+          <div class="header">
+            <figure>
+              <img src="https://graph.facebook.com/665377662/picture" alt="">
+              <figcaption>
+                Adriano Fernandes
+                <p>São Paulo - SP</p>
+              </figcaption>
+            </figure>
+          </div>
+          <figure class="experience_image">
+            <img src="https://irs2.4sqi.net/img/general/original/665651_y91JYVXlJMsL5_STs6C0RD24zUka673b_jskzNzfg-4.jpg" alt="">
+            <figcaption>
+              Menu degustação IMPECÁVEL. Vieiras Canadenses, Anchovas Negras e o melhor kobe Beef que eu já provei em um restaurante japonês. #naotempreco
+            </figcaption>
+          </figure>
+        </li> 
+        -->
+      </ul>
+    </section>
+    <br>
     <a href="#console" data-transition="slide">console</a><br>
   </div>
 </div>
+<!-- <a href="#experience" data-transition="slide">interna</a><br>
+<a href="#new_experience" data-transition="slide">form</a><br> -->
