@@ -1,14 +1,31 @@
 <!doctype html>
 <html>
   <head>
+    <title>Guia</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <%= stylesheet_link_tag "all" %>
-    <title>Hello World</title>
   </head>
   <body class="<%= page_classes %>">
     <%= yield %>
+    <div data-role="page" id="home">
+      <div data-role="header" data-position="fixed">
+        <h1>Home</h1>
+      </div>
+      <div data-role="content">
+        <div data-role="controlgroup" id="main-menu">
+          <a href="#camera"   data-transition="slide" data-role="button" class="ui-disabled">Camera</a>
+          <a href="#geo"      data-transition="slide" data-role="button">Geolocation</a>
+          <a href="#data"     data-transition="slide" data-role="button">Database</a>
+          <a href="#fb"       data-transition="slide" data-role="button">Login with Facebook</a>
+          <a href="#console"  data-transition="slide" data-role="button">Console</a>
+        </div>
+      </div>
+      <div data-role="footer">
+        <h2>Footer da pagina</h2>
+      </div>
+    </div>
     <%= javascript_include_tag "all" %>
   </body>
 </html>
