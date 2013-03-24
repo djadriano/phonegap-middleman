@@ -3,12 +3,6 @@
 # -------------------------------
 
 # -------------------------------
-# Variables
-# -------------------------------
-@app_url      = "cd ~/Documents/Studies/phonegap_apps/android_test/;"
-@copy_command = "rm -R assets/www/* ; cp -r ~/Documents/Studies/phonegap_apps/phonegap_middleman/build/* assets/www/"
-
-# -------------------------------
 # Sets
 # -------------------------------
 set :css_dir   , 'stylesheets'
@@ -35,7 +29,7 @@ module Phonegap
 
     end
 
-    def registered(app)
+    def registered( app )
 
       build_bash_cmd = build_properties(
         '~/Documents/Studies/phonegap_apps/android_test/',
