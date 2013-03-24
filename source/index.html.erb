@@ -1,100 +1,149 @@
-<div data-role="page" id="home">
-  <div data-role="header" data-position="fixed">
-    <h1>Home</h1>
-  </div>
-  <div data-role="content">
-    <div data-role="controlgroup" id="main-menu">
-      <a href="#camera"   data-transition="slide" data-role="button" class="ui-disabled">Camera</a>
-      <a href="#geo"      data-transition="slide" data-role="button">Geolocation</a>
-      <a href="#data"     data-transition="slide" data-role="button">Database</a>
-      <a href="#fb"       data-transition="slide" data-role="button">Login with Facebook</a>
-      <a href="#console"  data-transition="slide" data-role="button">Console</a>
-    </div>
-  </div>
-  <div data-role="footer">
-    <h2>Footer da pagina</h2>
-  </div>
-</div>
-<div data-role="page" id="camera">
-  <div data-role="header" data-position="fixed">
-    <h1>Camera</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <div data-role="controlgroup">
-      <button id="cam">Capture Photo</button>
-      <button id="editable_cam">Capture Editable Photo</button>
-      <button id="lib" data-source="PHOTOLIBRARY">From Photo Library</button>
-      <button id="album" data-source="SAVEDPHOTOALBUM">From Photo Album</button>
-    </div>
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" />
-  </div>
-</div>
-<div data-role="page" id="geo">
-  <div data-role="header" data-position="fixed">
-    <h1>Geolocation</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <p id="geolocation_info">Getting data...</p>
-  </div>
-</div>
-<div data-role="page" id="data">
-  <div data-role="header" data-position="fixed">
-    <h1>Database</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <div data-role="controlgroup">
-      <a href="#data_list" data-transition="slide" data-role="button">Listagem</a>
-      <a href="#data_form" data-transition="slide" data-role="button">Formulário</a>
-    </div>
-  </div>
-</div>
-<div data-role="page" id="data_list">
-  <div data-role="header" data-position="fixed">
-    <h1>Listagem</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <div id="data_content">
-    </div>
-  </div>
-</div>
-<div data-role="page" id="data_form">
-  <div data-role="header" data-position="fixed">
-    <h1>Formulário</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <h3>Nova experiencia</h3>
-    <form>
-      <input type="hidden" id="user_image_url">
-      <input type="hidden" id="lat">
-      <input type="hidden" id="lng">
-      <input type="text" id="user_name" placeholder="Nome">
-      <textarea id="user_description" cols="30" rows="10" placeholder="Descrição"></textarea>
-      <p>
-        <strong>Foto</strong>
-        <button data-theme="b" data-inline="true" data-mini="true" id="data_cam" data-source="CAMERA">Usar camera</button>
-        <button data-theme="b" data-inline="true" data-mini="true" id="data_lib" data-source="PHOTOLIBRARY">Minhas fotos</button>
-        <img id="sampleImage">
-      </p>
-      <p>
-        <button data-theme="a" data-inline="true" data-mini="false">Salvar</button> ou 
-        <button data-inline="true" data-mini="false">Cancelar</button>
-      </p>
-    </form>
-  </div>
-</div>
-<div data-role="page" id="fb">
-  <div data-role="header" data-position="fixed">
-    <h1>Login with Facebook</h1>
-    <a href="javascript:history.back();" data-icon="back">voltar</a>
-  </div>
-  <div data-role="content">
-    <p>Not implemented.</p>
-  </div>
-</div>
-<div data-role="page" id="console">
+<%= partial "partials/feed" %>
+<%= partial "partials/experience" %>
+<%= partial "partials/new_experience" %>
+<%= partial "partials/login" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+# <div data-role="page" id="home">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Home</h1>
+#   </div>
+#   <div data-role="content">
+#     <div data-role="controlgroup" id="main-menu">
+#       <a href="#camera"   data-transition="slide" data-role="button" class="ui-disabled">Camera</a>
+#       <a href="#geo"      data-transition="slide" data-role="button">Geolocation</a>
+#       <a href="#data"     data-transition="slide" data-role="button">Database</a>
+#       <a href="#fb"       data-transition="slide" data-role="button">Login with Facebook</a>
+#       <a href="#console"  data-transition="slide" data-role="button">Console</a>
+#     </div>
+#   </div>
+#   <div data-role="footer">
+#     <h2>Footer da pagina</h2>
+#   </div>
+# </div>
+# <div data-role="page" id="camera">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Camera</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <div data-role="controlgroup">
+#       <button id="cam">Capture Photo</button>
+#       <button id="editable_cam">Capture Editable Photo</button>
+#       <button id="lib" data-source="PHOTOLIBRARY">From Photo Library</button>
+#       <button id="album" data-source="SAVEDPHOTOALBUM">From Photo Album</button>
+#     </div>
+#     <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+#     <img style="display:none;" id="largeImage" src="" />
+#   </div>
+# </div>
+# <div data-role="page" id="geo">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Geolocation</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <p id="geolocation_info">Getting data...</p>
+#   </div>
+# </div>
+# <div data-role="page" id="data">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Database</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <div data-role="controlgroup">
+#       <a href="#data_list" data-transition="slide" data-role="button">Listagem</a>
+#       <a href="#data_form" data-transition="slide" data-role="button">Formulário</a>
+#     </div>
+#   </div>
+# </div>
+# <div data-role="page" id="data_list">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Listagem</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <div id="data_content">
+#     </div>
+#   </div>
+# </div>
+# <div data-role="page" id="data_form">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Formulário</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <h3>Nova experiencia</h3>
+#     <form>
+#       <input type="hidden" id="user_image_url">
+#       <input type="hidden" id="lat">
+#       <input type="hidden" id="lng">
+#       <input type="text" id="user_name" placeholder="Nome">
+#       <textarea id="user_description" cols="30" rows="10" placeholder="Descrição"></textarea>
+#       <p>
+#         <strong>Foto</strong>
+#         <button data-theme="b" data-inline="true" data-mini="true" id="data_cam" data-source="CAMERA">Usar camera</button>
+#         <button data-theme="b" data-inline="true" data-mini="true" id="data_lib" data-source="PHOTOLIBRARY">Minhas fotos</button>
+#         <img id="sampleImage">
+#       </p>
+#       <p>
+#         <button data-theme="a" data-inline="true" data-mini="false">Salvar</button> ou 
+#         <button data-inline="true" data-mini="false">Cancelar</button>
+#       </p>
+#     </form>
+#   </div>
+# </div>
+# <div data-role="page" id="fb">
+#   <div data-role="header" data-position="fixed">
+#     <h1>Login with Facebook</h1>
+#     <a href="javascript:history.back();" data-icon="back">voltar</a>
+#   </div>
+#   <div data-role="content">
+#     <p>Not implemented.</p>
+#   </div>
+# </div>
+# <div data-role="page" id="console">
+%>
+
+  
+  
+  
+  
